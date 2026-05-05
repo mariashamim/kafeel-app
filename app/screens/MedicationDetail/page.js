@@ -1,10 +1,12 @@
 "use client";
+import { Suspense } from "react";
 import { useEffect, useState } from "react";
 import { db } from "../../../firebase";
 import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function MedicationDetail() {
+// Component that uses useSearchParams - needs to be wrapped in Suspense
+function MedicationContent() {
   const [med, setMed] = useState(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
@@ -62,5 +64,29 @@ export default function MedicationDetail() {
         Delete medication
       </button>
     </main>
+  );
+}
+
+// Main component with Suspense boundary
+export default function MedicationDetail() {
+  return (
+    <Suspense fallback={
+      <div style={{ 
+        maxWidth: 390, 
+        margin: "0 auto", 
+        minHeight: "100vh", 
+        background: "#F5F2ED", 
+        display: "flex", 
+        alignItems: "center", 
+        justifyContent: "center",
+        fontFamily: "sans-serif" 
+      }}>
+        <div style={{ textAlign: "center", color: "#1C3123" }}>
+          <p>Loading medication details...</p>
+        </div>
+      </div>
+    }>
+      <MedicationContent />
+    </Suspense>
   );
 }

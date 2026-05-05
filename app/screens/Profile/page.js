@@ -4,7 +4,7 @@ import { auth, db } from "../../../firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
-import BottomNav from "../../components/BottomNav";
+import ElderlyNav from "../../components/ElderlyNav";
 
 export default function Profile() {
   const [user, setUser] = useState(null);
@@ -59,7 +59,7 @@ export default function Profile() {
           Log out
         </button>
       </div>
-      <BottomNav />
+      <ElderlyNav />
     </main>
   );
 }

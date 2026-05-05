@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { auth } from "../../../firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
@@ -27,7 +28,7 @@ export default function ForgetPasswordScreen() {
       <button onClick={() => router.back()} style={{ background: "none", border: "none", fontSize: 22, cursor: "pointer", marginBottom: 24, color: "#1C3123" }}>←</button>
       {!sent ? (
         <>
-          <div style={{ width: 64, height: 64, background: "#1C312315", borderRadius: 20, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>🔑</div>
+<Image src="/logo.png" alt="Kafeel" width={90} height={90} style={{ objectFit: "contain", marginBottom: 12 }} />
           <h1 style={{ fontSize: 26, fontWeight: 700, color: "#1C3123", margin: "0 0 6px" }}>Forgot password?</h1>
           <p style={{ fontSize: 14, color: "#1C312380", margin: "0 0 28px", lineHeight: 1.5 }}>Enter your email and we'll send you a reset link.</p>
           <div style={{ background: "#fff", borderRadius: 20, padding: 20, border: "1px solid #1C312210", marginBottom: 16 }}>

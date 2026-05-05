@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { auth, db } from "../../../firebase";
 import { collection, query, where, orderBy, onSnapshot } from "firebase/firestore";
 import { useRouter } from "next/navigation";
-import BottomNav from "../../components/BottomNav";
+import ElderlyNav from "../../components/ElderlyNav";
 
 export default function MedicationHistory() {
   const [meds, setMeds] = useState([]);
@@ -53,7 +53,7 @@ export default function MedicationHistory() {
           </div>
         ))}
       </div>
-      <BottomNav />
+      <ElderlyNav />
     </main>
   );
 }

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { auth, db } from "../../../firebase";
 import { collection, query, where, onSnapshot, deleteDoc, doc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
-import BottomNav from "../../components/BottomNav";
+import ElderlyNav from "../../components/ElderlyNav";
 
 export default function EmergencyContacts() {
   const [contacts, setContacts] = useState([]);
@@ -66,7 +66,7 @@ export default function EmergencyContacts() {
         style={{ position: "fixed", bottom: 88, right: "calc(50% - 175px)", width: 52, height: 52, borderRadius: "50%", background: "#1C3123", color: "#F5F2ED", border: "none", fontSize: 26, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 16px #1C312340" }}>
         +
       </button>
-      <BottomNav />
+      <ElderlyNav />
     </main>
   );
 }

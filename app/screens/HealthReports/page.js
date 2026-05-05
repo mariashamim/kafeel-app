@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { auth, db } from "../../../firebase";
 import { collection, query, where, orderBy, limit, onSnapshot } from "firebase/firestore";
 import { useRouter } from "next/navigation";
-import BottomNav from "../../components/BottomNav";
+import ElderlyNav from "../../components/ElderlyNav";
 
 export default function HealthReports() {
   const [vitals, setVitals] = useState([]);
@@ -60,7 +60,7 @@ export default function HealthReports() {
           </div>
         ))}
       </div>
-      <BottomNav />
+      <ElderlyNav />
     </main>
   );
 }

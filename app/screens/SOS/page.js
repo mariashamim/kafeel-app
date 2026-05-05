@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { auth, db } from "../../../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useRouter } from "next/navigation";
-import BottomNav from "../../components/BottomNav";
+import ElderlyNav from "../../components/ElderlyNav";
 
 export default function SOS() {
   const [contacts, setContacts] = useState([]);
@@ -66,7 +66,7 @@ export default function SOS() {
           </button>
         )}
       </div>
-      <BottomNav />
+      <ElderlyNav />
     </main>
   );
 }
